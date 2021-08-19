@@ -1,0 +1,15 @@
+<mat-select [formControl]="selectedRegion" multiple>
+  <mat-option *ngFor="let region of regions" [value]="region">{{region.region_name}}</mat-option>
+</mat-select>
+
+<br/>
+<mat-chip-list>
+  <mat-chip *ngFor="let region of selectedRegion" [removable]="true" (removed)="onToppingRemoved(region)">
+    {{ region.region_name }}
+    <mat-icon matChipRemove>cancel</mat-icon>
+  </mat-chip>
+</mat-chip-list>
+
+<!-- Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
